@@ -1,0 +1,110 @@
+* {
+    color: #ffffff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+
+body {  /* body has no '.' or '#' because it's html tag */ 
+    background-color: #121213;
+}
+
+.game-container { /* Giving a centered column where things are stacked above one another*/
+    height: 90vh;  /* 90 % of viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-container {  /* Gives the underline & centers 'Wordle */
+    text-align: center;
+    width: 510px;
+    border-bottom: solid 1px #3a3a3c;
+}
+
+.tile-container {  /* The tile styling with some spacing at the bottom */
+    width: 330px;
+    margin-bottom: 30px;
+}
+
+.key-container {  /* keyboard container */
+    width: 510px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.key-container button {  /* any 'button' that exists inside 'key container', create this styling */
+    width: 43px;
+    height: 58px;
+    border-radius: 4px;
+    border: none;
+    background-color: #818384;
+    margin: 4px;
+}
+
+.key-container button:nth-child(11) {  /* 11th (2nd row) button/letters shifted slightly away from left side */
+    margin-left: 30px;
+}
+
+.key-container button:nth-child(20),  /* Makes 'Enter' Button & 'Delete' button sightly larger compared to the rest */
+.key-container button:nth-child(28) {
+    width: 68px;
+}
+
+.tile-container div {
+    display: flex;  /* essentially makes them appear next to eachother (& not on top of eachother) */ 
+}
+
+.tile-container .tile {
+    width: 62px;
+    height: 62px;
+    border: 2px solid#3a3a3c;
+    box-sizing: border-box;  /* border goes on the inside */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2px;  
+}
+
+.message-container {
+    height: 30px;
+}
+
+.message-container p {
+    background-color: #818384;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0;
+}
+
+.tile.flip {  /*Flip animation*/
+    animation: 0.5s linear flipping;
+}
+
+@keyframes flipping {
+    0% {
+        transform: rotateX(0deg);
+    }
+    50% {
+        transform: rotateX(90deg);
+    }
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+
+
+
+.grey-overlay {  /* if letter is NOT in the word */
+    background-color: #3a3a3c !important;
+    border:none !important;
+}
+.yellow-overlay {  /* if correct in a different place */
+    background-color: #b59f3a !important;
+    border:none !important;
+}
+
+.green-overlay {  /* If correct in exact place! */
+    background-color: #538d4e !important;
+    border:none !important;
+}
