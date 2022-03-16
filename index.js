@@ -7,7 +7,7 @@ const app = express()
 
 app.use(cors())
 
-app.get('/word', (req, res) => {
+app.get('/', (req, res) => {
     const options = {
         method: 'GET',
         url: 'https://random-words5.p.rapidapi.com/getMultipleRandom',

@@ -6,7 +6,7 @@ const messageDisplay = document.querySelector('.message-container')  //selecting
 let worlde
 
 const getWordle = () => {
-    fetch('http://localhost:5000/word')
+    fetch('http://localhost:5000')
         .then(response => response.json())
         .then (json => {
             console.log(json)
