@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 })
 
 
-app.get('/check', (req, res) => {
+app.get('/', (req, res) => {
     const word = req.query.word
 
     const options = {

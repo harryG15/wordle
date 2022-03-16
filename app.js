@@ -128,7 +128,7 @@ const checkRow = () => {
     const guess = guessRows[currentRow].join('')  //The word joined up
 
         if (currentTile > 4) {
-            fetch(`http://localhost:5000/check/?word=${guess}`)  //passing through the word we want to check
+            fetch(`http://localhost:5000/?word=${guess}`)  //passing through the word we want to check
             .then(response => response.json())
             .then(json => {
                 if (json == 'Entry word not found') {  //if the word they entered isn't in the 'dictionary api', this message will show
